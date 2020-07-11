@@ -1,0 +1,166 @@
+--FE fling/Kill gui V2
+-- Instances:
+local FEFling = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local Credit = Instance.new("TextLabel")
+local Start = Instance.new("TextButton")
+local Stop = Instance.new("TextButton")
+local X = Instance.new("TextButton")
+local Desc = Instance.new("TextLabel")
+local Desc_2 = Instance.new("TextLabel")
+local frame = Instance.new("Frame")
+local open = Instance.new("TextButton")
+--Properties:
+FEFling.Name = "FEFling"
+FEFling.Parent = game.CoreGui
+
+main.Name = "main"
+main.Parent = FEFling
+main.BackgroundColor3 = Color3.new(0, 0, 0)
+main.BorderColor3 = Color3.new(1, 1, 1)
+main.Position = UDim2.new(0.432220012, 0, 0.335380882, 0)
+main.Size = UDim2.new(0, 206, 0, 267)
+main.Visible = false
+main.Draggable = true
+
+Title.Name = "Title"
+Title.Parent = main
+Title.BackgroundColor3 = Color3.new(1, 1, 1)
+Title.BackgroundTransparency = 1
+Title.Size = UDim2.new(0, 206, 0, 31)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "FE Kill/Fling V2"
+Title.TextColor3 = Color3.new(1, 1, 1)
+Title.TextSize = 14
+
+Credit.Name = "Credit"
+Credit.Parent = main
+Credit.BackgroundColor3 = Color3.new(1, 1, 1)
+Credit.BackgroundTransparency = 1
+Credit.Position = UDim2.new(0, 0, 0.116104871, 0)
+Credit.Size = UDim2.new(0, 206, 0, 31)
+Credit.Font = Enum.Font.SourceSans
+Credit.Text = "By Fortress Master and JackMcJagger15"
+Credit.TextColor3 = Color3.new(1, 1, 1)
+Credit.TextSize = 14
+
+Start.Name = "Start'"
+Start.Parent = main
+Start.BackgroundColor3 = Color3.new(0, 0, 0)
+Start.BorderColor3 = Color3.new(1, 1, 1)
+Start.Position = UDim2.new(0.0388349518, 0, 0.280898869, 0)
+Start.Size = UDim2.new(0, 191, 0, 50)
+Start.Font = Enum.Font.SourceSans
+Start.Text = "Start"
+Start.TextColor3 = Color3.new(1, 1, 1)
+Start.TextScaled = true
+Start.TextSize = 14
+Start.TextWrapped = true
+Start.MouseButton1Down:connect(function()
+power = 500 
+
+game:GetService('RunService').Stepped:connect(function()
+game.Players.LocalPlayer.Character.Head.CanCollide = false
+game.Players.LocalPlayer.Character.Torso.CanCollide = false
+game.Players.LocalPlayer.Character["Left Leg"].CanCollide = false
+game.Players.LocalPlayer.Character["Right Leg"].CanCollide = false
+end)
+
+wait(.1)
+local bambam = Instance.new("BodyThrust")
+bambam.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+bambam.Force = Vector3.new(power,0,power)
+bambam.Location = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+end)
+
+Stop.Name = "Stop["
+Stop.Parent = main
+Stop.BackgroundColor3 = Color3.new(0, 0, 0)
+Stop.BorderColor3 = Color3.new(1, 1, 1)
+Stop.Position = UDim2.new(0.0388349518, 0, 0.531835198, 0)
+Stop.Size = UDim2.new(0, 191, 0, 50)
+Stop.Font = Enum.Font.SourceSans
+Stop.Text = "Stop"
+Stop.TextColor3 = Color3.new(1, 1, 1)
+Stop.TextScaled = true
+Stop.TextSize = 14
+Stop.TextWrapped = true
+Stop.MouseButton1Down:connect(function()
+power = 0
+
+game:GetService('RunService').Stepped:connect(function()
+game.Players.LocalPlayer.Character.Head.CanCollide = false
+game.Players.LocalPlayer.Character.Torso.CanCollide = false
+game.Players.LocalPlayer.Character["Left Leg"].CanCollide = false
+game.Players.LocalPlayer.Character["Right Leg"].CanCollide = false
+end)
+
+wait(.1)
+local bambam = Instance.new("BodyThrust")
+bambam.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+bambam.Force = Vector3.new(power,0,power)
+bambam.Location = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+end)
+
+X.Name = "X"
+X.Parent = main
+X.BackgroundColor3 = Color3.new(0, 0, 0)
+X.BorderColor3 = Color3.new(1, 1, 1)
+X.Position = UDim2.new(0.888349533, 0, 0, 0)
+X.Size = UDim2.new(0, 23, 0, 24)
+X.Font = Enum.Font.SourceSans
+X.Text = "X"
+X.TextColor3 = Color3.new(1, 1, 1)
+X.TextScaled = true
+X.TextSize = 14
+X.TextWrapped = true
+X.MouseButton1Down:connect(function()
+main.Visible = false
+open.Visible = true
+end)
+
+Desc.Name = "Desc"
+Desc.Parent = main
+Desc.BackgroundColor3 = Color3.new(1, 1, 1)
+Desc.BackgroundTransparency = 1
+Desc.Position = UDim2.new(0, 0, 0.749063671, 0)
+Desc.Size = UDim2.new(0, 206, 0, 31)
+Desc.Font = Enum.Font.SourceSans
+Desc.Text = "Sadly You may not set power"
+Desc.TextColor3 = Color3.new(1, 1, 1)
+Desc.TextSize = 14
+
+Desc_2.Name = "Desc"
+Desc_2.Parent = main
+Desc_2.BackgroundColor3 = Color3.new(1, 1, 1)
+Desc_2.BackgroundTransparency = 1
+Desc_2.Position = UDim2.new(0, 0, 0.865168571, 0)
+Desc_2.Size = UDim2.new(0, 206, 0, 31)
+Desc_2.Font = Enum.Font.SourceSans
+Desc_2.Text = "But this version is working"
+Desc_2.TextColor3 = Color3.new(1, 1, 1)
+Desc_2.TextSize = 14
+
+frame.Name = "frame"
+frame.Parent = FEFling
+frame.BackgroundColor3 = Color3.new(0, 0, 0)
+frame.BorderColor3 = Color3.new(1, 1, 1)
+frame.Position = UDim2.new(0.00392927323, 0, 0.484029502, 0)
+frame.Size = UDim2.new(0, 122, 0, 60)
+
+open.Name = "open"
+open.Parent = frame
+open.BackgroundColor3 = Color3.new(1, 1, 1)
+open.BackgroundTransparency = 1
+open.Position = UDim2.new(0.0573770478, 0, 0.0833333358, 0)
+open.Size = UDim2.new(0, 106, 0, 50)
+open.Font = Enum.Font.SourceSans
+open.Text = "Open FE fling GUI"
+open.TextColor3 = Color3.new(1, 1, 1)
+open.TextSize = 14
+open.TextWrapped = true
+open.MouseButton1Down:connect(function()
+main.Visible = true
+open.Visible = false
+end)
